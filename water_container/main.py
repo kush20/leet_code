@@ -1,5 +1,10 @@
 class Solution:
+
     def max_area(self, height: list) -> int:
+        """
+          contraints: inputs and outputs. 
+          exceptions thrown.
+        """
         num_walls = len(height)
         current_record = 0
         for start_index, start_height in enumerate(height, 1):
@@ -8,3 +13,4 @@ class Solution:
                 current_area = min(start_height, end_height) * (end_index - start_index + 1)
                 current_record = max(current_area, current_record)
         return current_record
+
